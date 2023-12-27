@@ -8,11 +8,12 @@ const style = {
   received: `bg-[#e5e5ea] text-black float-left rounded-br-full`,
 };
 
-const Message = ({ message }) => {
+const Message = ({ message,scroll}) => {
   const messageClass = 
   message.uid === auth.currentUser.uid
   ? `${style.sent}`
   : `${style.received}`
+  scroll.current.scrollIntoView({behavior: 'smooth'})
 
   return (
     <div>
